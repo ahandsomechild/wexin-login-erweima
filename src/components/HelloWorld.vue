@@ -14,7 +14,9 @@ export default {
     return {
       appid: 'wx0c05ce174cd624b7',
       redirect_uri: 'http%3a%2f%2fhxy.niezhiliang.com%2fcallback',
-      url:''
+      url:'',
+      itop:0,
+      ileft:0,
     };
   },
   created(){
@@ -23,7 +25,10 @@ export default {
   },
   methods:{
     login(){
-          window.open (this.url,'newwindow', 'height=500, width=400, top=100, left=0, toolbar=no, menubar=no,scrollbars=no, resizable=no,location=no, status=no')
+      this.itop = (window.screen.availHeight - 30 - 500) / 2; 
+            //获得窗口的水平位置 
+      this.ileft = (window.screen.availWidth - 10 - 400) / 2; 
+      window.open (this.url,'newwindow', 'height=500, width=400, top='+this.itop+', left = '+this.ileft+', toolbar=no, menubar=no,scrollbars=no, resizable=no,location=no, status=no')
     }
   }
 };
