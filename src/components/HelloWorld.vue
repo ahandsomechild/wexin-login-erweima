@@ -1,7 +1,6 @@
 <template>
   <div class="login_div">
     <button @click="login">微信登录</button>
-    <!-- <div id="obj" style="text-align: center"></div> -->
   </div>
 </template>
 
@@ -15,20 +14,14 @@ export default {
       appid: 'wx0c05ce174cd624b7',
       redirect_uri: 'http%3a%2f%2fhxy.niezhiliang.com%2fcallback',
       url:'',
-      itop:0,
-      ileft:0,
     };
   },
   created(){
-    this.url = 'https://open.weixin.qq.com/connect/qrconnect?appid='+this.appid + '&redirect_uri='+ this.redirect_uri +'&response_type=code&scope=snsapi_login#wechat_redirect';
-    
+    this.url = 'https://open.weixin.qq.com/connect/qrconnect?appid='+this.appid + '&redirect_uri='+ this.redirect_uri +'&response_type=code&scope=snsapi_login#wechat_redirect';    
   },
   methods:{
     login(){
-      this.itop = (window.screen.availHeight - 30 - 500) / 2; 
-            //获得窗口的水平位置 
-      this.ileft = (window.screen.availWidth - 10 - 400) / 2; 
-      window.open (this.url,'newwindow', 'height=500, width=400, top='+this.itop+', left = '+this.ileft+', toolbar=no, menubar=no,scrollbars=no, resizable=no,location=no, status=no')
+      window.open (this.url,'_self', 'height=500, width=400, toolbar=no, menubar=no,scrollbars=no, resizable=no,location=no, status=no')
     }
   }
 };
