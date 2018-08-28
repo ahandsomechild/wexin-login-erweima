@@ -1,6 +1,9 @@
 <template>
   <div class="login_div">
     <button @click="login">微信登录</button>
+    <router-link :to="{name:'child',query:{testid:1111,state:'sdasda'}}">
+      <button>测试</button>
+    </router-link>
   </div>
 </template>
 
@@ -21,7 +24,8 @@ export default {
   },
   methods:{
     login(){
-      window.open (this.url,'_self', 'height=500, width=400, toolbar=no, menubar=no,scrollbars=no, resizable=no,location=no, status=no')
+      window.location = this.url;
+      // window.open (this.url,'_self', 'height=500, width=400, toolbar=no, menubar=no,scrollbars=no, resizable=no,location=no, status=no')
     }
   }
 };
